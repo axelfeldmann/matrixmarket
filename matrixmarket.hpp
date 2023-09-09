@@ -194,7 +194,7 @@ CSRMatrix<CoordType,ValueType> read_csr(const char* filename) {
     using NonzeroType = Nonzero<CoordType,ValueType>;
 
     std::vector<NonzeroType> nonzeros;
-    for (int i = 0; i < header.num_nonzeros; i++) {
+    for (CoordType i = 0; i < header.num_nonzeros; i++) {
         std::string line;
         std::getline(infile, line);
         auto tokens = Tokens(line, ' ');

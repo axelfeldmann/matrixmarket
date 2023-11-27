@@ -11,6 +11,8 @@
 #include <deque>
 #include <algorithm>
 
+namespace MatrixMarket {
+
 ///////////////////////////////////////////////////////////////////////////////
 // Public API
 ///////////////////////////////////////////////////////////////////////////////
@@ -264,4 +266,6 @@ CSRMatrix<CoordType,ValueType> read_csr(const char* filename) {
         std::move(col_indices),
         std::move(values)
     };
+}
+
 }

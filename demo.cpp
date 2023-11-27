@@ -7,7 +7,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    auto csr = read_csr<unsigned int,float>(argv[1]);
+    auto csr = MatrixMarket::read_csr<unsigned int,float>(argv[1]);
 
     for (int i = 0; i < csr.num_rows; i++) {
         for (int j = csr.row_offsets[i]; j < csr.row_offsets[i+1]; j++) {

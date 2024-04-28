@@ -7,13 +7,12 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    auto csr = read_csr<unsigned int,float>(argv[1]);
+    printf("CSR:\n");
 
-    for (int i = 0; i < csr.num_rows; i++) {
-        for (int j = csr.row_offsets[i]; j < csr.row_offsets[i+1]; j++) {
-            printf("%d %d %f\n", i, csr.col_indices[j], csr.values[j]);
-        }
-    }
+    auto csr = MatrixMarket::read_csr<unsigned int,float>(argv[1]);
+
+    printf("%u x %u, %u nnz\n", csr.num_rows, csr.num_cols, csr.num_nonzeros);
+
 
     return 0;
 }

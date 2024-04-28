@@ -1,6 +1,6 @@
 # Compiler to use
 CXX = g++
-CXXFLAGS = -std=c++11
+CXXFLAGS = -std=c++11 -O3
 TARGET = demo
 SRC = demo.cpp
 
